@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "LeetLens Connector",
+  "version": "1.0",
+  "description": "Silently fetches LeetCode solved problems",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://leetcode.com/*",
+    "http://localhost:8000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
